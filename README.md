@@ -27,6 +27,7 @@ More epochs improve accuracy up to a point.
 |---|---|
 | `training.py` | The full pipeline: load data → train → save weights → evaluate |
 | `training.ipynb` | The same pipeline as a step-by-step notebook, with sample image plots |
+| `visualize_layers.py` | Draws what every layer outputs for one test image (`layers.png`) |
 | `net1.py` | An alternative, deeper CNN with dropout (for 1-channel 28×28 images, MNIST-style) |
 | `net2.ipynb` | A walkthrough of PyTorch basics: forward pass, loss, backprop, weight updates |
 | `models/` | Previously trained weights (2, 12 and 25 epochs) |
@@ -69,6 +70,17 @@ The average loss is printed every 2,000 mini-batches.
 The script turns off gradients (`torch.no_grad()`), runs the test set through
 the network, takes the highest-scoring class as the prediction, and reports
 overall accuracy and accuracy for each class.
+
+## Seeing what each layer does
+
+```bash
+python visualize_layers.py              # picks a confidently-classified test image
+python visualize_layers.py --index 7    # or choose one (0–9999)
+```
+
+This traces one test image through every layer and saves `layers.png`:
+
+![Layer-by-layer activations](layers.png)
 
 ## Loading saved weights
 
