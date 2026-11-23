@@ -1,0 +1,13 @@
+# Python environment
+.venv/
+__pycache__/
+*.pyc
+
+# CIFAR-10 is downloaded automatically on first run (~340 MB)
+data/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
